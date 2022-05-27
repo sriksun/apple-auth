@@ -1,3 +1,6 @@
+*.p8
+env
+
 # Logs
 logs
 *.log
