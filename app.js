@@ -6,10 +6,12 @@ const OAuth2Strategy = require("passport-oauth").OAuth2Strategy;
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 
+/*
 const domainAssociation = fs.readFileSync(
   "./apple-developer-domain-association.txt",
   "utf8"
 );
+*/
 const appleStrategy = "apple";
 
 const app = express();
@@ -50,9 +52,11 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+/*
 app.get("/.well-known/apple-developer-domain-association.txt", (req, res) => {
   res.send(domainAssociation);
 });
+*/
 
 app.get("/auth/apple", passport.authenticate(appleStrategy));
 
